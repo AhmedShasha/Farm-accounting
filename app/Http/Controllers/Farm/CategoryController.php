@@ -105,7 +105,7 @@ class CategoryController extends Controller
 
             // calculate operations 
             $balance->quantityOutcoming_DuringPeriod = ($balance->quantity_FirstPeriod + $balance->quantityPurchases_DuringPeriod) - $balance->quantity_LastPeriod;
-            $balance->amountOutcoming_DuringPeriod = ($balance->price_FirstPeriod + $balance->amountPurchases_DuringPeriod) - $balance->price_LastPeriod;
+            $balance->amountOutcoming_DuringPeriod = ($balance->amount_FirstPeriod + $balance->amountPurchases_DuringPeriod) - $balance->amount_LastPeriod;
 
             $balance->priceOutcoming_DuringPeriod = $balance->amountOutcoming_DuringPeriod / $balance->quantityOutcoming_DuringPeriod;
 
@@ -150,7 +150,7 @@ class CategoryController extends Controller
 
             // calculate operations 
             $balance->quantityOutcoming_DuringPeriod = ($balance->quantity_FirstPeriod + $balance->quantityPurchases_DuringPeriod) - $balance->quantity_LastPeriod;
-            $balance->amountOutcoming_DuringPeriod = ($balance->price_FirstPeriod + $balance->amountPurchases_DuringPeriod) - $balance->price_LastPeriod;
+            $balance->amountOutcoming_DuringPeriod = ($balance->amount_FirstPeriod + $balance->amountPurchases_DuringPeriod) - $balance->amount_LastPeriod;
 
             $balance->priceOutcoming_DuringPeriod = $balance->amountOutcoming_DuringPeriod / $balance->quantityOutcoming_DuringPeriod;
 
