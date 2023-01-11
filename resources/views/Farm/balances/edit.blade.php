@@ -61,7 +61,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="quantity_FirstPeriod" class="form-control"
-                                                            step="0.1" value="{{ $data['balance']->quantity_FirstPeriod }}" required
+                                                            step="0.001" value="{{ $data['balance']->quantity_FirstPeriod }}" required
                                                             placeholder="كمية اول المدة بالكيلو" name="quantity_FirstPeriod">
                                                     </div>
 
@@ -70,7 +70,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="price_FirstPeriod" class="form-control"
-                                                            step="0.1" value="{{ $data['balance']->price_FirstPeriod }}" required
+                                                            step="0.001" value="{{ $data['balance']->price_FirstPeriod }}" required
                                                             placeholder="سعر الكيلو أول المدة" name="price_FirstPeriod">
                                                     </div>
 
@@ -79,7 +79,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="quantity_LastPeriod" class="form-control"
-                                                            step="0.1" value="{{$data['balance']->quantity_LastPeriod }}" required
+                                                            step="0.001" value="{{$data['balance']->quantity_LastPeriod }}" required
                                                             placeholder="كمية اول المدة بالكيلو" name="quantity_LastPeriod">
                                                     </div>
 
@@ -88,7 +88,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="price_LastPeriod" class="form-control"
-                                                            step="0.1" value="{{ $data['balance']->price_LastPeriod }}" required
+                                                            step="0.001" value="{{ $data['balance']->price_LastPeriod }}" required
                                                             placeholder="سعر الكيلو أول المدة" name="price_LastPeriod">
                                                     </div>
 

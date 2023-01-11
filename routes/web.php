@@ -44,7 +44,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers\Farm'
 
     #End Region
 
-    #Region for [Categories Routes]
+    #Region for [Balances Routes]
         Route::get('/all-Balances','CategoryController@getAllBalances')->name('allBalances');
         Route::get('/create-Balances','CategoryController@createBalance')->name('createBalance');
         Route::post('/all-Balance','CategoryController@storeBalances')->name('storeBalance');
@@ -86,6 +86,17 @@ Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers\Farm'
         Route::get('/edit-Category/{id}', 'CategoryController@edit')->name('editCategory');
         Route::post('/update-Category/{id}', 'CategoryController@update')->name('updateCategory');
         Route::delete('/delete-Category/{id}', 'CategoryController@destroy')->name('deleteCategory');
+    #End Region
+
+    #Region for [Indebtedness Routes]
+        Route::get('/all-Indebtedness','IndebtednessController@index')->name('allIndebtedness');
+        Route::post('/all-Indebtedness','IndebtednessController@store')->name('storeIndebtedness');
+        Route::get('/edit-Indebtedness/{id}', 'IndebtednessController@edit')->name('editIndebtedness');
+        Route::post('/update-Indebtedness/{id}', 'IndebtednessController@update')->name('updateIndebtedness');
+        Route::delete('/delete-Indebtedness/{id}', 'IndebtednessController@destroy')->name('deleteIndebtedness');
+        // inventory
+        Route::get('/inventory','IndebtednessController@inventory')->name('inventory');
+
     #End Region
 });
 

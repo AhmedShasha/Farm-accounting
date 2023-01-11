@@ -46,7 +46,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="date" id="date" class="form-control"
-                                                            step="0.1" value="{{ $data['stock']->date }}" required
+                                                            step="0.001" value="{{ $data['stock']->date }}" required
                                                             placeholder="التاريخ" name="date">
                                                     </div>
 
@@ -55,7 +55,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="text" id="supplyDestination" class="form-control"
-                                                            step="0.1" value="{{ $data['stock']->supplyDestination }}" required
+                                                            step="0.001" value="{{ $data['stock']->supplyDestination }}" required
                                                             placeholder="جهة التوريد" name="supplyDestination">
                                                     </div>
 
@@ -72,12 +72,12 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
-                                                    
+
                                                     <div class="form-group col-md-3 col-6">
                                                         <label for="inComingQuantity">كمية الوارد بالكيلو
                                                             <span class="text-danger">*</span>
                                                         </label>
-                                                        <input type="number" id="inComingQuantity" class="form-control" step="0.1" value="{{$data['stock']->inComingQuantity}}"
+                                                        <input type="number" id="inComingQuantity" class="form-control" step="0.001" value="{{$data['stock']->inComingQuantity}}"
                                                             required placeholder="كمية الوارد بالكيلو" name="inComingQuantity">
                                                     </div>
 
@@ -85,7 +85,7 @@
                                                         <label for="inComingUnitPrice">سعر الوارد للكيلو
                                                             <span class="text-danger">*</span>
                                                         </label>
-                                                        <input type="number" id="inComingUnitPrice" class="form-control" step="0.1" value="{{$data['stock']->inComingUnitPrice}}"
+                                                        <input type="number" id="inComingUnitPrice" class="form-control" step="0.001" value="{{$data['stock']->inComingUnitPrice}}"
                                                             required placeholder="سعر الوارد للكيلو" name="inComingUnitPrice">
                                                     </div>
 
@@ -93,7 +93,7 @@
                                                         <label for="outComingQuantity">كمية المنصرف بالكيلو
                                                             <span class="text-danger">*</span>
                                                         </label>
-                                                        <input type="number" id="outComingQuantity" class="form-control" step="0.1" value="{{$data['stock']->outComingQuantity}}"
+                                                        <input type="number" id="outComingQuantity" class="form-control" step="0.001" value="{{$data['stock']->outComingQuantity}}"
                                                             required placeholder="كمية المنصرف بالكيلو" name="outComingQuantity">
                                                     </div>
 
@@ -101,7 +101,7 @@
                                                         <label for="outComingUnitPrice">سعر المنصرف للكيلو
                                                             <span class="text-danger">*</span>
                                                         </label>
-                                                        <input type="number" id="outComingUnitPrice" class="form-control" step="0.1" value="{{$data['stock']->outComingUnitPrice}}"
+                                                        <input type="number" id="outComingUnitPrice" class="form-control" step="0.001" value="{{$data['stock']->outComingUnitPrice}}"
                                                             required placeholder="سعر المنصرف للكيلو" name="outComingUnitPrice">
                                                     </div>
 

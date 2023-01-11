@@ -46,7 +46,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="date" id="date" class="form-control"
-                                                            step="0.1" value="{{ old('date') }}" required
+                                                            step="0.001" value="{{ old('date') }}" required
                                                             placeholder="التاريخ" name="date">
                                                     </div>
 
@@ -55,7 +55,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="text" id="supplyDestination" class="form-control"
-                                                            step="0.1" value="{{ old('supplyDestination') }}" required
+                                                            step="0.001" value="{{ old('supplyDestination') }}" required
                                                             placeholder="جهة التوريد" name="supplyDestination">
                                                     </div>
 
@@ -79,7 +79,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="inComingQuantity" class="form-control"
-                                                            step="0.1" value="{{ old('inComingQuantity') }}" required
+                                                            step="0.001" value="{{ old('inComingQuantity') }}" required
                                                             placeholder="كمية الوارد بالكيلو" name="inComingQuantity">
                                                     </div>
 
@@ -88,7 +88,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="inComingUnitPrice" class="form-control"
-                                                            step="0.1" value="{{ old('inComingUnitPrice') }}" required
+                                                            step="0.001" value="{{ old('inComingUnitPrice') }}" required
                                                             placeholder="سعر الوارد للكيلو" name="inComingUnitPrice">
                                                     </div>
 
@@ -97,7 +97,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="outComingQuantity" class="form-control"
-                                                            step="0.1" value="{{ old('outComingQuantity') }}" required
+                                                            step="0.001" value="{{ old('outComingQuantity') }}" required
                                                             placeholder="كمية المنصرف بالكيلو" name="outComingQuantity">
                                                     </div>
 
@@ -106,7 +106,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="outComingUnitPrice" class="form-control"
-                                                            step="0.1" value="{{ old('outComingUnitPrice') }}" required
+                                                            step="0.001" value="{{ old('outComingUnitPrice') }}" required
                                                             placeholder="سعر المنصرف للكيلو" name="outComingUnitPrice">
                                                     </div>
 

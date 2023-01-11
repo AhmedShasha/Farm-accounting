@@ -1,10 +1,9 @@
-<div id="sidebar" class="active" >
+<div id="sidebar" class="active">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
             <div class="">
                 <div class="logo row">
-                    <a href="" class="col-md-2 m-auto"><img src="{{ asset('dist/assets/images/logo/logo.png') }}"
-                            alt="Logo" srcset="">
+                    <a href="" class="col-md-2 m-auto"><img src="{{ asset('dist/assets/images/logo/logo.png') }}" alt="Logo" srcset="">
                     </a>
                     <h4 class="col-md-10 mt-3">المزرعة</h4>
                 </div>
@@ -17,7 +16,20 @@
                         <i class="bi fa-solid fa-house-chimney m-1"></i>
                         <span>لوحة التحكم</span>
                     </a>
-                    
+
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="{{ route('allCategories') }}" class='sidebar-link'>
+                        <i class="bi fa-solid fa-layer-group m-1"></i>
+                        <span>الاصناف</span>
+                    </a>
+                    <!--  <ul class="submenu">
+                        <li class="submenu-item ">
+                            <a href="">
+                                كل الاصناف</a>
+                        </li>
+                    </ul>  -->
                 </li>
 
                 <li class="sidebar-item has-sub">
@@ -38,6 +50,25 @@
                             <a href="{{route('createFirst_LastPeriod')}}">
                                 إدخال جديد</a>
                         </li>
+                    </ul>
+                </li>
+
+
+                <li class="sidebar-item has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi fa-solid fa-wallet m-1"></i>
+                        <span>الخزينة</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu-item ">
+                            <a href="{{route('allStocks')}}">
+                                كل الخزينة</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="{{route('createStock')}}">
+                                إضافة للخزينة</a>
+                        </li>
+
                     </ul>
                 </li>
 
@@ -77,43 +108,15 @@
                     </ul>
                 </li>
 
-                <li class="sidebar-item has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi fa-solid fa-wallet m-1"></i>
-                        <span>الخزينة</span>
-                    </a>
-                    <ul class="submenu">
-                        <li class="submenu-item ">
-                            <a href="{{route('allStocks')}}">
-                                كل الخزينة</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="{{route('createStock')}}">
-                                إضافة للخزينة</a>
-                        </li>
-
-                    </ul>
-                </li>
                 <li class="sidebar-item">
-                    <a href="{{ route('allCategories') }}" class='sidebar-link'>
-                        <i class="bi fa-solid fa-layer-group m-1"></i>
-                        <span>الاصناف</span>
-                    </a>
-                    {{-- <ul class="submenu">
-                        <li class="submenu-item ">
-                            <a href="">
-                                كل الاصناف</a>
-                        </li>
-                    </ul> --}}
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                    <a href="{{route('allIndebtedness')}}" class='sidebar-link'>
                         <i class="bi fas fa-hand-holding-usd m-1"></i>
                         <span>جرد أخر السنة</span>
                     </a>
                 </li>
-                
+
                 <hr>
+
                 @if (Auth::user()->role == 'admin')
                     <li class="sidebar-item has-sub">
                         <a href="#" class='sidebar-link'>
@@ -137,8 +140,7 @@
                 <li class="sidebar-item ">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <a class="dropdown-item sidebar-link" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item sidebar-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class=" bi fas fa-sign-out-alt"></i>
                             <span>تسجيل خروج</span>
                         </a>

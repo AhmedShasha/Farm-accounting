@@ -95,7 +95,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="quantity" class="form-control"
-                                                            step="0.1" value="{{ $data['item']->quantity }}" required
+                                                            step="0.001" value="{{ $data['item']->quantity }}" required
                                                             placeholder="الكمية بالكيلو" name="quantity">
                                                     </div>
 
@@ -104,7 +104,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="unitPrice" class="form-control"
-                                                            step="0.1" value="{{ $data['item']->unitPrice }}" required
+                                                            step="0.001" value="{{ $data['item']->unitPrice }}" required
                                                             placeholder="السعر للكيلو" name="unitPrice">
                                                     </div>
 

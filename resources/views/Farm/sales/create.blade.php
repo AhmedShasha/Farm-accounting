@@ -79,7 +79,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="quantity" class="form-control"
-                                                            step="0.1" value="{{ old('quantity') }}" required
+                                                            step="0.001" value="{{ old('quantity') }}" required
                                                             placeholder="الكمية بالكيلو" name="quantity">
                                                     </div>
 
@@ -88,7 +88,7 @@
                                                             <span class="text-danger">*</span>
                                                         </label>
                                                         <input type="number" id="unitPrice" class="form-control"
-                                                            step="0.1" value="{{ old('unitPrice') }}" required
+                                                            step="0.001" value="{{ old('unitPrice') }}" required
                                                             placeholder="السعر للكيلو" name="unitPrice">
                                                     </div>
 

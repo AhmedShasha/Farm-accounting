@@ -7,15 +7,15 @@
                 <div class="page-heading">
                     <div class="page-title">
                         <div class="row">
-                            <div class="col-12 col-md-6 order-md-1 order-first">
-                                <h3>كل الأصناف</h3>
+                            <div class="col-6 order-md-1 order-first">
+                                <h3>جرد أخر السنة</h3>
                                 {{-- <p class="text-subtitle text-muted">For user to check they list</p> --}}
                             </div>
                             <div class="col-12 col-md-6 order-md-2 d-flex justify-content-end">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                     <ol class="breadcrumb">
                                         {{-- <li class="breadcrumb-item"><a>Farm</a></li> --}}
-                                        <li class="breadcrumb-item active" aria-current="page">كل الأصناف</li>
+                                        <li class="breadcrumb-item active" aria-current="page">جرد أخر السنة</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -27,28 +27,44 @@
                         <div class="row match-height">
                             <div class="col-12 m-auto">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">إضافه صنف</h4>
+                                    <div class="card-header col-12 m-auto row">
+                                        <h4 class="card-title col-6">إضافه مديونية</h4>
+                                        <div class="col-6 text-start">
+                                            <a href="{{route('inventory')}}" class="btn btn-success">عرض الجرد</a>
+                                        </div>
                                     </div>
                                     <div class="card-content">
                                         @include('includes.errors')
 
                                         <div class="card-body">
-                                            <form class="form" method="POST" action="{{ route('storeCategory') }}">
+                                            <form class="form" method="POST" action="{{ route('storeIndebtedness') }}">
                                                 @csrf
                                                 {{ csrf_field() }}
                                                 {{ method_field('post') }}
 
                                                 <div class="row">
 
-                                                    <div class="col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <label for="category">الصنف
-                                                                <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" id="category" class="form-control"
-                                                                required placeholder="الصنف" name="category">
-                                                        </div>
+                                                    <div class="form-group col-md-3 col-6">
+                                                        <label for="category">الصنف
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <select name="category" id="category" class="choices form-select"
+                                                            dir="ltr">
+                                                            <option value="">اختار</option>
+                                                            @foreach ($data['categories'] as $cat)
+                                                                <option value="{{ $cat->id }}"
+                                                                    {{ old($cat->id) == $cat->id ? 'selected' : '' }}>
+                                                                    {{ $cat->category }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group col-md-6 col-12">
+                                                        <label for="amount">قيمة المديونية
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <input type="number" step="0.001" id="amount" class="form-control" required
+                                                            placeholder="قيمة المديونية" name="amount">
                                                     </div>
 
                                                     <div class="col-12 d-flex justify-content-end">
@@ -71,7 +87,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
-                                    <span class="col-md-6">كل الاصناف</span>
+                                    <span class="col-md-6">كل المديونيات</span>
 
                                     <div class="col-md-6 text-start">
                                         {{-- <a href="{{ route('createUser') }}" class="btn btn-sm btn-success">
@@ -90,23 +106,22 @@
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th class="text-center">الصنف</th>
-
-                                            <th class="text-center">التاريخ</th>
+                                            <th class="text-center">قيمة المدوينية</th>
                                             <th class="text-center">الاكشن</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data['categories'] as $index => $value)
+                                        @foreach ($data['indebtedness'] as $index => $value)
                                             <tr>
                                                 <td class="text-center">{{ $index + 1 }}</td>
-                                                <td class="text-center">{{ $value->category }}</td>
+                                                <td class="text-center">{{ $value->category->category }}</td>
 
-                                                <td class="text-center">{{ $value->created_at }}</td>
+                                                <td class="text-center">{{ number_format($value->amount , 2) }}</td>
                                                 <td class="text-center">
                                                     <a class="btn btn-primary btn-sm"
-                                                        href="{{ route('editCategory', $value->id) }}"><i
+                                                        href="{{ route('editIndebtedness', $value->id) }}"><i
                                                             class="fas fa-edit mr-1"></i></a>
-                                                    <form action="{{ route('deleteCategory', $value->id) }}" method="POST"
+                                                    <form action="{{ route('deleteIndebtedness', $value->id) }}" method="POST"
                                                         class="" style="display:inline-block;">
                                                         @csrf
                                                         @method('DELETE')

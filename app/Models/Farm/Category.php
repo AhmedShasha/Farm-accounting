@@ -15,10 +15,15 @@ class Category extends Model
     {
         return $this->hasMany(Stock::class);
     }
-    
+
     public function capital()
     {
         return $this->hasMany(Capital::class);
+    }
+
+    public function indebtedness()
+    {
+        return $this->hasMany(Indebtedness::class);
     }
 
 }
